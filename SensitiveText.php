@@ -17,7 +17,7 @@ $wgExtensionCredits['parserhook'][] = array(
         'author'      => "Sandro Lutz",
         'url'         => "",
         'version'     => SENSITIVETEXT_VERSION,
-        'descriptionmsg' => 'security-desc',
+        'descriptionmsg' => 'Ermöglicht das verstecken von sensiblem Text in einem öffentliche Artikel. Dieser Text wird dann nur eingeloggten Benutzern zugänglich sein.',
 );
 
 $wgHooks['ParserFirstCallInit'][] = 'SensitiveText::onParserSetup';

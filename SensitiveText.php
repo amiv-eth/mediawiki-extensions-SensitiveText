@@ -7,6 +7,10 @@ if( version_compare( $wgVersion, '1.28.0' ) < 0 ) die( 'This version of Sensitiv
  */
 define('SENSITIVETEXT_VERSION', '0.1.0, 2017-04-13');
 
+# Load the SensitiveText class and messages
+$dir = dirname( __FILE__ ) . '/';
+$wgAutoloadClasses['SensitiveText'] = $dir . 'SensitiveText_body.php';
+
 $wgExtensionCredits['parserhook'][] = array(
 	'path'        => __FILE__,
 	'name'        => "SensitiveText",

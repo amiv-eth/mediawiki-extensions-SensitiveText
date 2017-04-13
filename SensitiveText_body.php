@@ -4,7 +4,7 @@
  */
 class SensitiveText {
 	
-	function __construct() {
+	function setup() {
 		global $wgParser;
 		$wgParser->setHook("sensitive", array($this, "parseSensitiveTag"));
 	}

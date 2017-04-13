@@ -12,13 +12,12 @@ $dir = dirname( __FILE__ ) . '/';
 $wgAutoloadClasses['SensitiveText'] = $dir . 'SensitiveText_body.php';
 
 $wgExtensionCredits['parserhook'][] = array(
-	'path'        => __FILE__,
-	'name'        => "SensitiveText",
-	'author'      => "Sandro Lutz",
-	'url'         => "",
-	'version'     => SENSITIVETEXT_VERSION,
-	'descriptionmsg' => 'security-desc',
+        'path'        => __FILE__,
+        'name'        => "SensitiveText",
+        'author'      => "Sandro Lutz",
+        'url'         => "",
+        'version'     => SENSITIVETEXT_VERSION,
+        'descriptionmsg' => 'security-desc',
 );
 
-# Instantiate the SensitiveText singleton now that the environment is prepared
-$wgSensitiveText = new SensitiveText();
+$wgHooks['ParserFirstCallInit'][] = 'SensitiveText::onParserSetup';

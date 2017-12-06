@@ -19,14 +19,21 @@
     "AutoloadClasses": {
         "SensitiveText": "SensitiveText.class.php"
     },
-	"Hooks": {
-		"ParserFirstCallInit": "SensitiveText::onParserSetup"
-	},
-	"ResourceModules": {
-		"ext.SensitiveText": {
-			"scripts": "modules/ext.SensitiveText.js",
-			"styles": "modules/ext.SensitiveText.css"
-		}
-	},
+    "Hooks": {
+        "ParserFirstCallInit": "SensitiveText::onParserSetup"
+    },
+    "ResourceModules": {
+        "ext.SensitiveText": {
+			"scripts": "ext.SensitiveText.js",
+			"styles": "ext.SensitiveText.css",
+            "messages": [
+                "sensitivetext-label"
+            ],
+        }
+    },
+    "ResourceFileModulePaths": {
+        "localBasePath": "modules",
+        "remoteExtPath": "SensitiveText/modules"
+    },
     "manifest_version": 1
 }

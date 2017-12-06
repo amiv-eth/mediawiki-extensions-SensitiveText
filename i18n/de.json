@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sandro Lutz"
+		]
+	},
+	"sensitivetext-desc": "Stellt zusätzlich die Tags <sensitive></sensitive> und <hide></hide> zur Verfügung. Der Sensitive-Tag versteckt Text auf öffentlichen Seiten. Der Text ist dann nur eingeloggten Benutzern zugänglich. Der Hide-Tag verteckt den Text für alle Benutzer. Er kann angezeigt werden, indem man auf den Platzhalter-Text klickt. WICHTIG! Caching darf nicht aktiviert sein, wenn diese Extension verwendet wird."
+}

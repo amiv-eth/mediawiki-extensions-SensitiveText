@@ -1,0 +1,29 @@
+{
+    "name": "SensitiveText",
+    "version": "0.1.0",
+    "author": [
+        "Sandro Lutz"
+    ],
+    "url": "https://gitlab.ethz.ch/amiv/mediawiki-extensions-SensitiveText",
+    "descriptionmsg": "sensitivetext-desc",
+    "license-name": "AGPLv3",
+    "type": "other",
+    "requires": {
+        "MediaWiki": ">= 1.27.0"
+    },
+    "MessagesDirs": {
+        "SensitiveText": [
+            "i18n"
+        ]
+    },
+    "AutoloadClasses": {
+        "SensitiveText": "SensitiveText.class.php"
+    },
+	"ResourceModules": {
+		"ext.SensitiveText": {
+			"scripts": "modules/ext.SensitiveText.js",
+			"styles": "modules/ext.SensitiveText.css",
+		}
+	},
+    "manifest_version": 1
+}

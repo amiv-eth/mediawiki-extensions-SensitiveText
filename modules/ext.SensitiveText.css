@@ -1,0 +1,11 @@
+/* MediaWiki Extension: SensitiveText */
+
+.sensitivetext-hide {
+	cursor: pointer;
+	background-color: #EEE;
+}
+
+.sensitivetext-sensitive {
+	background-color:#ffc;
+	border:1px solid #ccc;
+}

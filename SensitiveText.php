@@ -1,23 +1,13 @@
 <?php
-if( !defined( 'MEDIAWIKI' ) ) die( 'Not an entry point.' );
-if( version_compare( $wgVersion, '1.28.0' ) < 0 ) die( 'This version of SensitiveText is for MediaWiki 1.28 or greater' );
-/**
- * SensitiveText extension
- * - Extends the MediaWiki article protection to hide some text parts on a public page
- */
-define('SENSITIVETEXT_VERSION', '0.1.0, 2017-04-13');
-
-# Load the SensitiveText class and messages
-$dir = dirname( __FILE__ ) . '/';
-$wgAutoloadClasses['SensitiveText'] = $dir . 'SensitiveText_body.php';
-
-$wgExtensionCredits['parserhook'][] = array(
-        'path'        => __FILE__,
-        'name'        => "SensitiveText",
-        'author'      => "Sandro Lutz",
-        'url'         => "",
-        'version'     => SENSITIVETEXT_VERSION,
-        'descriptionmsg' => 'Ermöglicht das verstecken von sensiblem Text in einem öffentliche Artikel. Dieser Text wird dann nur eingeloggten Benutzern zugänglich sein.',
-);
-
-$wgHooks['ParserFirstCallInit'][] = 'SensitiveText::onParserSetup';
+if ( function_exists( 'wfLoadExtension' ) ) {
+    wfLoadExtension('SensitiveText');
+    // Keep i18n globals so mergeMessageFileList.php doesn't break
+    $wgMessagesDirs['SensitiveText'] = __DIR__ . '/i18n';
+    wfWarn(
+        'Deprecated PHP entry point used for SensitiveText extension. Please use wfLoadExtension instead, ' .
+        'see https://www.mediawiki.org/wiki/Extension_registration for more details.'
+    );
+    return;
+} else {
+    die( 'This version of the SensitiveText extension requires MediaWiki 1.25+' );
+}

@@ -24,8 +24,8 @@
     },
     "ResourceModules": {
         "ext.SensitiveText": {
-			"scripts": "ext.SensitiveText.js",
-			"styles": "ext.SensitiveText.css",
+            "scripts": "ext.SensitiveText.js",
+            "styles": "ext.SensitiveText.css",
             "messages": [
                 "sensitivetext-label"
             ]

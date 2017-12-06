@@ -28,7 +28,7 @@
 			"styles": "ext.SensitiveText.css",
             "messages": [
                 "sensitivetext-label"
-            ],
+            ]
         }
     },
     "ResourceFileModulePaths": {

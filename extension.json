@@ -19,10 +19,13 @@
     "AutoloadClasses": {
         "SensitiveText": "SensitiveText.class.php"
     },
+	"Hooks": {
+		"ParserFirstCallInit": "SensitiveText::onParserSetup"
+	},
 	"ResourceModules": {
 		"ext.SensitiveText": {
 			"scripts": "modules/ext.SensitiveText.js",
-			"styles": "modules/ext.SensitiveText.css",
+			"styles": "modules/ext.SensitiveText.css"
 		}
 	},
     "manifest_version": 1

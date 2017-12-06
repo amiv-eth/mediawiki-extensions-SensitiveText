@@ -20,12 +20,6 @@
  *
  */
 
-use MediaWiki\Auth\AuthManager;
-use MediaWiki\Auth\AbstractPasswordPrimaryAuthenticationProvider;
-use MediaWiki\Auth\AuthenticationRequest;
-use MediaWiki\Auth\PasswordAuthenticationRequest;
-use MediaWiki\Auth\AuthenticationResponse;
-
 class SensitiveText
 {
 	public static function onParserSetup( Parser $parser ) {

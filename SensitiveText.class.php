@@ -33,7 +33,7 @@ class SensitiveText
 	public static function renderSensitiveTag($input, array $args, Parser $parser, PPFrame $frame) {
 		global $wgUser;
 		if ($wgUser->isLoggedIn() === true) {
-				return "<span class=\"sensitivetext-sensitive\" title=\"Sensitive Daten\">" .$parser->recursiveTagParse($input) ."</span>";
+				return "<span class=\"sensitivetext-sensitive\" title=\"Sensitive Daten\" style=\"background-color:#ffc;border:1px solid #ccc;\">" .$parser->recursiveTagParse($input) ."</span>";
 		} else {
 				return "";
 		}
@@ -41,6 +41,6 @@ class SensitiveText
 	
 	// Render <hide>
 	public static function renderHideTag($input, array $args, Parser $parser, PPFrame $frame) {
-		return "<span class=\"sensitivetext-hide\" data-text=\"" .$input ."\" onclick=\"toggleHide(this);\">**********</span>";
+		return "<span class=\"sensitivetext-hide\" style=\"cursor: pointer;background-color: #EEE;\" data-text=\"" .$input ."\" onclick=\"function(this){if (element.innerHTML == element.getAttribute('data-text')) { element.innerHTML = '**********'; } else { element.innerHTML = element.getAttribute('data-text'); } }\">**********</span>";
 	}
 }

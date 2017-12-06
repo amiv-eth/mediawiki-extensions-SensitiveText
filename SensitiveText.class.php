@@ -22,26 +22,28 @@
 
 class SensitiveText
 {
-	public static function onParserSetup( Parser $parser ) {
-		// When the parser sees the <sensitive> tag, it executes renderSensitiveTag
-		// When the parser sees the <hide> tag, it executes renderHideTag
-		$parser->setHook( 'sensitive', 'SensitiveText::renderSensitiveTag' );
-		$parser->setHook( 'hide', 'SensitiveText::renderHideTag' );
-	}
+    public static function onParserSetup( Parser $parser ) {
+        // When the parser sees the <sensitive> tag, it executes renderSensitiveTag
+        // When the parser sees the <hide> tag, it executes renderHideTag
+        $parser->setHook( 'sensitive', 'SensitiveText::renderSensitiveTag' );
+        $parser->setHook( 'hide', 'SensitiveText::renderHideTag' );
+    }
 
 	// Render <sensitive>
 	public static function renderSensitiveTag($input, array $args, Parser $parser, PPFrame $frame) {
-		global $wgUser, $wgOut;
-		if ($wgUser->isLoggedIn() === true) {
-				return "<span class=\"sensitivetext-sensitive\" title=\"Sensitive Daten\">" .$parser->recursiveTagParse($input) ."</span>";
-		} else {
-				return "";
-		}
-	}
+        global $wgUser, $wgOut;
+        $wgOut->addModules('ext.SensitiveText');
+        if ($wgUser->isLoggedIn() === true) {
+            return "<span class=\"sensitivetext-sensitive\" title=\"Sensitive Daten\">" .$parser->recursiveTagParse($input) ."</span>";
+        } else {
+            return "";
+        }
+    }
 	
-	// Render <hide>
-	public static function renderHideTag($input, array $args, Parser $parser, PPFrame $frame) {
-		global $wgOut;
-		return "<span class=\"sensitivetext-hide\" data-text=\"" .$input ."\" onclick=\"toggleHide(this);\">**********</span>";
-	}
+    // Render <hide>
+    public static function renderHideTag($input, array $args, Parser $parser, PPFrame $frame) {
+        global $wgOut;
+        $wgOut->addModules('ext.SensitiveText');
+        return "<span class=\"sensitivetext-hide\" data-text=\"" .$input ."\" onclick=\"toggleHide(this);\">**********</span>";
+    }
 }

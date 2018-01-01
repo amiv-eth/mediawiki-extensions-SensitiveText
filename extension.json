@@ -7,7 +7,7 @@
     "url": "https://gitlab.ethz.ch/amiv/mediawiki-extensions-SensitiveText",
     "descriptionmsg": "sensitivetext-desc",
     "license-name": "AGPLv3",
-    "type": "other",
+    "type": "parserhook",
     "requires": {
         "MediaWiki": ">= 1.27.0"
     },
